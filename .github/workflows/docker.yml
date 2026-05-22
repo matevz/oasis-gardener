@@ -51,7 +51,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Rebuild ghcr.io/oasisprotocol/oasis-gardener:${{ steps.determine_tag.outputs.tag }}"
+      - name: "Build and push ghcr.io/oasisprotocol/oasis-gardener:${{ steps.determine_tag.outputs.tag }}"
         uses: docker/build-push-action@v6
         with:
           tags: ghcr.io/oasisprotocol/oasis-gardener:${{ steps.determine_tag.outputs.tag }}
